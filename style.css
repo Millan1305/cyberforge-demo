@@ -1,0 +1,294 @@
+body {
+  background-image: url("image/Background1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+}
+
+/* Splash Screen full page cover karega */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 2s ease forwards;
+  animation-delay: 3s; /* 3 sec baad hide hoga */
+}
+
+.splash-logo {
+  width: 150px;
+  animation: zoomIn 1.5s ease;
+}
+.splash-text {
+  color: red;
+  font-size: 40px;
+  margin-top: 20px;
+  animation: fadeInUp 2s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+
+/* Blinking Logo Styling */
+.blink-logo {
+  width: 200px;       /* logo ka size control */
+  height: auto;
+  margin-bottom: 20px; /* logo aur CYBERFORGE ke bich ka gap */
+  animation: blink 1s infinite alternate;
+   margin-left: 188px; 
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.3; }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;   /* side by side */
+  align-items: center;
+  justify-content: center;
+  gap: 150px;            /* 👈 dono ke beech ka space (increase if needed) */
+  width: 100%;
+  max-width: 1200px;     /* layout control */
+  margin: 0 auto;        /* center wrapper */
+  padding: 50px;         /* thoda breathing space */
+}
+
+
+.center-text {
+    margin-right: 150px
+}
+
+.center-text h1 {
+  font-size: 80px;
+  font-weight: 800;
+  text-shadow: 0 0 10px red;
+  margin: 0;
+  text-align: center;
+}
+
+.center-text p {
+  font-size: 18px;
+  color: #ddd;
+  text-align: center;
+  min-height: 24px;
+}
+
+#typing {
+  font-size: 25px;
+  border-right: 2px solid #361818;
+  padding-left: 40px; 
+  animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  color: #681f1f;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 42ch } /* 32 characters (tumhare text ke hisaab se adjust karna) */
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+
+/* Top Right Sign In */
+.top-signin {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #8e1b1b;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.top-signin:hover {
+  background: #cc0000;
+  box-shadow: 0 0 10px rgba(255,0,0,0.8);
+}
+
+/* Top Left Logo */
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 55px;
+  width: auto;
+}
+
+/* Login Card (Glassmorphism Style) */
+.auth-card {
+  width: 100%;
+  max-width: 350px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Tabs */
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  padding: 6px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+.tab-btn {
+  border: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: transparent;
+  color: #eee;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+.tab-btn.active {
+  background: linear-gradient(90deg, #ff1a1a, #660000);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255,50,50,0.8);
+}
+
+/* Tab Forms */
+.tab { display: none; }
+.tab.active { display: block; }
+
+/* Heading */
+h2 {
+  margin: 8px 0 14px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #ff4d4d;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255,77,77,0.9);
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 13px;
+  color: #ddd;
+  margin: 10px 2px 6px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px 1px;
+  font-size: 14px; 
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  outline: none;
+  transition: 0.2s;
+}
+input:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 10px rgba(255,50,50,0.7);
+}
+
+/* Primary Button */
+.primary {
+  width: 100%;
+  padding: 11px;
+  font-size: 14px; 
+  margin-top: 14px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff1a1a, #660000);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.primary:hover {
+  background: linear-gradient(90deg, #ff3333, #990000);
+  box-shadow: 0 0 15px rgba(255,50,50,1);
+}
+
+/* OR Divider */
+.or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd;
+  margin: 18px 0;
+  font-size: 13px;
+  position: relative;
+}
+.or::before, .or::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.or:not(:empty)::before { margin-right: .75em; }
+.or:not(:empty)::after { margin-left: .75em; }
+
+/* Google Button */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #444;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.google-btn img {
+  width: 18px;
+  height: 18px;
+}
+.google-btn:hover {
+  background: #f5f5f5;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
